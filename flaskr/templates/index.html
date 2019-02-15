@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>visual</title>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+	<p>development</p>
+	<div class="container">
+		{% block container %}
+		{% endblock container %}
+</div>
+
+</body>
+<script>
+	d3.selectAll("p").style("color", "red");
+</script>
+</html>
