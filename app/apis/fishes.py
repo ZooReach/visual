@@ -1,6 +1,6 @@
 import json
-from app.utils.constants import api
-from app.utils.rest_client import get
+from app.helper.constants import api
+from app.helper.rest_client import get
 
 def main():
     category_stats = get_result()

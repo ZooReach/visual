@@ -1,4 +1,5 @@
  var json_data = {}
+ 
  d3.json("/api/fishes").then( function (json_data) {
 
     var chart = c3.generate({
