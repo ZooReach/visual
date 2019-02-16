@@ -6,4 +6,4 @@ source localenv/bin/activate
 
 pip install -r requirements.txt
 
-FLASK_APP=flaskr:app FLASK_DEBUG=1 python -m flask run
+FLASK_APP=app:app FLASK_DEBUG=1 python -m flask run
