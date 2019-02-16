@@ -4,11 +4,12 @@
 	<title>visual</title>
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 	<script src="https://d3js.org/d3.v5.js"></script>
+	<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.11/c3.min.js"></script>
 </head>
 
 <body>
-	<p>development</p>
+	<h3>Playground</h3>
 	<div class="container">
 		{% block visualization %}
 		{% endblock visualization %}
