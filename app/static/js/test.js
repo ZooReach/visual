@@ -1,22 +1,41 @@
-var w=300
-var h=100
+var json_data = {}
 
-var padding=2;
-var dataset = [5,10,11,20,25];
-var svg = d3.select(".visualization")
-            .append("svg")
-            .attr("width",w)
-            .attr("height", h);
-svg.selectAll("rect")
-    .data(dataset)
-    .enter()
-    .append("rect")
-    .attr("x",function(d,i){return i*(w/dataset.length);})
-    .attr("y",function(d){return h-(d*4);})
-    .attr("width", w/dataset.length-padding)
-    .attr("height",function(d){return d*4;});
+d3.json("/api/test").then( function (json_data) {
+  data = json_data['data']
+  var chart = c3.generate({
+    size: {
+    height: 400,
+    width: 400
+  },
+  bindto :".test",
+  data: {
+      json: json_data['data'],
+      type : 'bar',
+      keys: {
+          x: 'name',
+          value: ['count']
+      },
+      onclick: function (d, i) { 
+        console.log(d);
+        var base_url = window.location.origin;
+        window.open(
+        base_url+'/visual/test',
+        '_blank' 
+    );
+    },
+      },
+      axis: {
+              x: {
+                  type: 'category'
+              }
+      },
+      bar: {
+          width: {
+              ratio: 0.15
+          }
+      },
 
-
-
-
-
+  });
+  document.getElementById("test").innerHTML = "Chart depicts number of categories available for species";
+});
+   
